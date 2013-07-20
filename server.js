@@ -16,7 +16,7 @@ if(fs.existsSync(configFilename))
 
 // Set defaults for our configuration
 _.defaults(config, {
-	db_connection: "",
+	db_connection: process.env.DB_CONNECTION,
 	environment  : "development",
 	http_port    : 3300
 });
