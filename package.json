@@ -2,13 +2,10 @@
 	"name"        : "node330.server",
 	"version"     : "0.0.1",
 	"description" : "An implementation of a type of Programmable Logic Controller (PLC) using Node.js as a runtime.",
-	"main"        : "./node330.server.js",
-	"bin"         : "./node330.server.js",
+	"main"        : "server.js",
+	"bin"         : "server.js",
 	"author"      : "Jim Heising <jim@gmail.com>",
 	"license"     : "MIT",
-	"directories" : {
-		"lib": "lib"
-	},
 	"dependencies": {
 		"underscore"       : "*",
 		"underscore.string": "*",
