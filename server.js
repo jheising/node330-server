@@ -17,15 +17,12 @@ if(fs.existsSync(configFilename))
 // Set defaults for our configuration
 _.defaults(config, {
 	db_connection: process.env.DB_CONNECTION,
-	environment  : "development",
-	http_port    : 3300
+	http_port    : process.env.PORT || 3300
 });
 
 // Save our settings, in case any haven't been initialized yet
 var configString = JSON.stringify(config, null, 4);
 fs.writeFileSync(configFilename, configString);
-
-process.env.NODE_ENV = config.environment;
 
 // Initialize our database connection
 mongoose.connect(config.db_connection);
