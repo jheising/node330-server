@@ -35,10 +35,11 @@ db.once('open', function callback()
 
 // Create our HTTP server
 var server = restify.createServer();
+server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
+server.use(restify.jsonp());
 server.use(restify.gzipResponse());
-server.use(restify.acceptParser(server.acceptable));
 
 // Create our API documentation
 swagger.configure(server);
